@@ -1,5 +1,6 @@
-<button class="whatsapp-buttons" aria-label="WhatsApp"><img src="resources/img/whatsapp-icon.png" /></button>
-      <footer>
+<button class="whatsapp-buttons" aria-label="WhatsApp"><img src="/assets/img/whatsapp-icon.png" /></button>
+@if(Request::is('/'))
+<footer>
          <div class="container">
             <div class="row gy-4">
                <div class="col-sm-2 text-center text-md-start">
@@ -87,6 +88,8 @@
             </div>
          </div>
       </footer>
+@endif      
+
       <div class="footer-lower text-white">
          <div class="container">
             <div class="row gy-3">
@@ -107,13 +110,14 @@
             </div>
          </div>
       </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
       <script src="{{URL::asset('assets/js/ityped.min.js')}}"></script>
       <!-- slick javascript cdn --> 
       <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
       <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
       <script src="https://jsuites.net/v4/jsuites.js"></script>
+      @if(Request::is('/'))
       <script>
          // Create a new calendar
          jSuites.calendar(document.getElementById('calendar'), {
@@ -253,3 +257,103 @@ const formattedDate = `${day}${suffix} ${month} ${year}`;
                });
            });
       </script>
+
+@elseif(Request::is('overview'))
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script>
+         document.querySelectorAll('.btn-number').forEach(function(button) {
+         button.addEventListener('click', function(e) {
+            // alert('yes');
+           e.preventDefault();
+         
+           const fieldName = this.getAttribute('data-field');
+           const type = this.getAttribute('data-type');
+           const input = document.querySelector(`input[name='${fieldName}']`);
+           let currentVal = parseInt(input.value);
+         
+           if (!isNaN(currentVal)) {
+               if (type === 'minus') {
+                   if (currentVal > parseInt(input.getAttribute('min'))) {
+                       input.value = currentVal - 1;
+                       input.dispatchEvent(new Event('change'));
+                   }
+                   if (parseInt(input.value) === parseInt(input.getAttribute('min'))) {
+                       this.setAttribute('disabled', true);
+                   }
+               } else if (type === 'plus') {
+                   if (currentVal < parseInt(input.getAttribute('max'))) {
+                       input.value = currentVal + 1;
+                       input.dispatchEvent(new Event('change'));
+                   }
+                   if (parseInt(input.value) === parseInt(input.getAttribute('max'))) {
+                       this.setAttribute('disabled', true);
+                   }
+               }
+           } else {
+               input.value = 0;
+           }
+         });
+         });
+         
+         document.querySelectorAll('.input-number').forEach(function(input) {
+         input.addEventListener('focusin', function() {
+           this.setAttribute('data-oldValue', this.value);
+         });
+         
+         input.addEventListener('change', function() {
+           const minValue = parseInt(this.getAttribute('min'));
+           const maxValue = parseInt(this.getAttribute('max'));
+           const valueCurrent = parseInt(this.value);
+           const name = this.getAttribute('name');
+         
+           if (valueCurrent >= minValue) {
+               document.querySelector(`.btn-number[data-type='minus'][data-field='${name}']`).removeAttribute('disabled');
+           } else {
+               alert('Sorry, the minimum value was reached');
+               this.value = this.getAttribute('data-oldValue');
+           }
+         
+           if (valueCurrent <= maxValue) {
+               document.querySelector(`.btn-number[data-type='plus'][data-field='${name}']`).removeAttribute('disabled');
+           } else {
+               alert('Sorry, the maximum value was reached');
+               this.value = this.getAttribute('data-oldValue');
+           }
+         });
+         
+         input.addEventListener('keydown', function(e) {
+           // Allow: backspace, delete, tab, escape, enter and .
+           const allowedKeys = [46, 8, 9, 27, 13, 190];
+           if (allowedKeys.includes(e.keyCode) ||
+               // Allow: Ctrl+A
+               (e.keyCode === 65 && e.ctrlKey === true) ||
+               // Allow: home, end, left, right
+               (e.keyCode >= 35 && e.keyCode <= 39)) {
+               // let it happen, don't do anything
+               return;
+           }
+           // Ensure that it is a number and stop the keypress
+           if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+               e.preventDefault();
+           }
+         });
+         });
+
+         // When the user scrolls down 20px from the top of the document, show the button
+         window.onscroll = function() {scrollFunction()};
+         
+         function scrollFunction() {
+         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+           mybutton.style.display = "block";
+         } else {
+           mybutton.style.display = "none";
+         }
+         }
+         
+         // When the user clicks on the button, scroll to the top of the document
+         function topFunction() {
+         document.body.scrollTop = 0; // For Safari
+         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+         }         
+      </script>
+@endif
