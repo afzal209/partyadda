@@ -229,9 +229,9 @@
                            <div class="d-flex flex-wrap align-items-center mb-2">
                               <h2 class="fs-4 mb-0 d-md-block d-none slote_name1">Opera</h2>
                               <span class="fs-14 fw-bold text-white rounded-pill ms-md-auto"><a href="javascript:void(0)" class="btn button-custom rounded-pill px-3 px-lg-4 px-xxl-5 proceed">Proceed</a><br>
-                                 <p class="mt-2 mb-0" style="color:blue;">(Just pay <b>₹590 advance</b> to book</p></span>
+                                 <p class="mt-2 mb-0" style="color:blue;">(Just pay <b id="advance_amount">₹590 advance</b> to book</p></span>
                            </div>
-                           <div class="fs-5">₹ 1749 for Upto 4 People</div>
+                           <div class="fs-5 total_amount">₹ 1749 for Upto 4 People</div>
                            <div class="fs-14">Including Taxes | ₹ 300 / Extra Person</div>
                            <div class="d-flex info my-3">
                               <button type="button" class="btn btn-secondary rounded-pill" data-bs-toggle="tooltip" data-bs-placement="top" title="Maximum Capacity is 2 people">
@@ -460,20 +460,31 @@
  
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>
+
+
+
     function getValue(){
         localStorage.removeItem('name');
         localStorage.removeItem('calender');
         localStorage.removeItem('time');
+        localStorage.removeItem('total');
+        localStorage.removeItem('advance');
         // console.log('yes');
         var name = $('.slote_name').text();
         // console.log(name);
         var calender = $('#calendar-value').text();
-        // console.log(calender);
+        var advance_amount = $('#advance_amount').text();
+        var total_amount = $('.total_amount').text();
+        var total = total_amount.match(/\d+/)[0];
+        var advance = advance_amount.match(/\d+/)[0];
+        // console.log(total+':'+advance);
         var time = $('#slote_time').text();
         // console.log(time);
         localStorage.setItem('name',name);
         localStorage.setItem('calender',calender);
         localStorage.setItem('time',time);
+        localStorage.setItem('total',total);
+        localStorage.setItem('advance',advance);
         window.location.href ='/overview';
     }
 
@@ -484,6 +495,8 @@
         localStorage.removeItem('name');
         localStorage.removeItem('calender');
         localStorage.removeItem('time');
+        localStorage.removeItem('total');
+        localStorage.removeItem('advance');
         // console.log('yes');
         var name = $('.slote_name1').text();
         // console.log(name);
@@ -494,6 +507,8 @@
         localStorage.setItem('name',name);
         localStorage.setItem('calender',calender);
         localStorage.setItem('time',time);
+        localStorage.setItem('total',total);
+        localStorage.setItem('advance',advance);
         window.location.href ='/overview';
     }
 

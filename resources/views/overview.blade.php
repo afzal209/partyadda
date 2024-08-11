@@ -41,7 +41,7 @@
                      <div class="row gy-4">
                         <div class="col-md-6">
                            <label for="Booking-Name" class="form-label">Booking Person Full Name<font color="red">*</font></label>
-                           <input type="text" class="form-control form-control-lg" id="Booking-Name" placeholder="">
+                           <input type="text" class="form-control form-control-lg" id="Booking_Name" placeholder="">
                         </div>
                         <div class="col-md-6">
                            <label for="" class="form-label">Number of people<font color="red">*</font></label>
@@ -53,7 +53,7 @@
                                     </svg>
                                  </button>
                               </span>
-                              <input type="text" name="quant[1]" class="form-control input-number" value="0" min="0" max="30">
+                              <input type="text" name="quant[1]" class="form-control input_number" value="0" min="0" max="30">
                               <span class="input-group-btn">
                                  <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
                                     <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-1k33q06" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="AddIcon">
@@ -65,15 +65,15 @@
                         </div>
                         <div class="col-md-6">
                            <label for="Whatsapp-Name" class="form-label">Whatsapp Number<font color="red">*</font></label>
-                           <input type="number" class="form-control form-control-lg" id="Whatsapp-Name" placeholder="">
+                           <input type="number" class="form-control form-control-lg" id="Whatsapp_Name" placeholder="">
                         </div>
                         <div class="col-md-6">
                            <label for="Email-ID" class="form-label">Email ID<font color="red">*</font></label>
-                           <input type="email" class="form-control form-control-lg" id="Email-ID" placeholder="">
+                           <input type="email" class="form-control form-control-lg" id="Email_ID" placeholder="">
                         </div>
                         <div class="col-md-6">
                            <label for="decoration" class="form-label">Do you want decoration?<font color="red">*</font></label>
-                           <select class="form-select form-select-lg" aria-label="Default select example">
+                           <select class="form-select form-select-lg" id="form_select_lg" aria-label="Default select example">
                               <option value="1">Yes</option>
                               <option value="2">No</option>
                            </select>
@@ -81,7 +81,7 @@
                         <div class="col-md-6">
                            <label for="Coupon" class="form-label">Coupon Code</label>
                            <div class="input-group input-group-lg">
-                              <input type="text" class="form-control" placeholder="" aria-label="coupon" aria-describedby="button-addon2">
+                              <input type="text" class="form-control coupon_code" placeholder="" aria-label="coupon" aria-describedby="button-addon2">
                               <button class="btn btn-secondary" type="button" id="button-addon2">Appy</button>
                            </div>
                         </div>
@@ -92,26 +92,26 @@
                   <div class="summary-content p-3  p-md-4 find-us mb-4 h-100">
                      <div class="fs-5 fw-bold mb-4">Booking Summary</div>
                      <div class="d-flex mb-2">
-                        <span>Opera Theater (4 People)</span><b class="ms-auto">₹ 1749</b>
+                        <span>Opera Theater (4 People)</span><b class="ms-auto total"></b>
                      </div>
                      <div class="d-flex mb-2">
                         <span>Decoration</span><b class="ms-auto">₹ 0</b>
                      </div>
                      <hr>
                      <div class="d-flex mb-2">
-                        <span>Subtotal</span><b class="ms-auto">₹ 1749</b>
+                        <span>Subtotal</span><b class="ms-auto sub_total"></b>
                      </div>
                      <hr>
                      <div class="d-flex mb-2 fw-bold">
-                        <span>Advance Amount Payable</span><b class="ms-auto">₹ 500</b>
+                        <span>Advance Amount Payable</span><b class="ms-auto advance"></b>
                      </div>
                      <hr>
                      <div class="d-flex mb-2 ">
                         <span>Balance Amount<div class="fs-11">(Payable at the Venue on 7th Auguts, 2024)</div></span>
-                        <b class="ms-auto">₹ 1249</b>
+                        <b class="ms-auto balance"></b>
                      </div>
 					 <div class="col-md-6">
-						<a href="select-occasion.html" class="btn button-custom rounded-pill px-3 px-lg-12 px-xxl-5">Next Occasion</a>
+						<a href="javascript:void(0)" class="btn button-custom rounded-pill px-3 px-lg-12 px-xxl-5 next_occasion">Next Occasion</a>
 					  </div>
                   </div>
                </div>
@@ -123,8 +123,32 @@
                 $('.name').text(localStorage.getItem('name'));
                 $('.calender').text(localStorage.getItem('calender'));
                 $('.time').text(localStorage.getItem('time'));
+                $('.total').text('₹'+''+ localStorage.getItem('total'));
+                $('.sub_total').text('₹'+''+ localStorage.getItem('total'));
+                $('.advance').text('₹'+''+ localStorage.getItem('advance'));
+                $('.balance').text( localStorage.getItem('total') - localStorage.getItem('advance'));
 
             });
+            function nextOccasion(){
+                // console.log('yes');
+                var Booking_Name = $('#Booking_Name').val();
+                var input_number = $('.input_number').val(); 
+                var Whatsapp_Name = $('#Whatsapp_Name').val();
+                var Email_ID = $('#Email_ID').val();
+                var form_select_lg = $('#form_select_lg').val();
+                var coupon_code = $('.coupon_code').val();
+                // console.log(Booking_Name+input_number+Whatsapp_Name+Email_ID+form_select_lg+coupon_code);
+                localStorage.setItem('Booking_Name',Booking_Name)
+                localStorage.setItem('input_number',input_number)
+                localStorage.setItem('Whatsapp_Name',Whatsapp_Name)
+                localStorage.setItem('Email_ID',Email_ID)
+                localStorage.setItem('form_select_lg',form_select_lg)
+                localStorage.setItem('coupon_code',coupon_code)
+                window.location.href ='/select-occasion'
+
+            }
+
+            $('.next_occasion').on('click',nextOccasion);
             </script>
 
 @endsection

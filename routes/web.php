@@ -22,5 +22,16 @@ Route::get('/overview', function () {
 });
 
 
+Route::get('/select-occasion', function () {
+    return view('select-occasion');
+});
+
+Route::get('/select-cake', function () {
+    return view('select-cake');
+});
+
+Route::get('/select-decoration', function () {
+    return view('select-decoration');
+});
 
 
