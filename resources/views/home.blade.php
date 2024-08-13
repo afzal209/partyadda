@@ -201,24 +201,25 @@
 						   <div><img src="assets/img/opera1.jpg" style="height:220px;" class="img-fluid" alt="Opera Private Theatre"></div>
 						</div>
                   <div class="px-2 px-md-3">
-                     <center><span class="seat-available fs-14 fw-bold text-white rounded-pill py-2 px-3 ms-auto">0  slots available</span></center><br>
-                     <h2 class="fs-4 mb-0 d-md-none d-block  mb-3 slote_name">Opera</h2>
+                    <input type="hidden" name="slot_time" value="" id="slot_time">
+                     <center><span class="seat-available fs-14 fw-bold text-white rounded-pill py-2 px-3 ms-auto">1  slots available</span></center><br>
+                     <h2 class="fs-4 mb-0 d-md-none d-block  mb-3 slot_name">Opera</h2>
                      <div class="fw-500 mb-2">Choose a time slot for <b id="calendar-value"></b></div>
                      <div class="time-slot-selection flex-wrap">
-                       <button class="not-available" disabled><img class="me-1" src="assets/img/sunLight.svg" alt="" />
+                       <button class="available" ><img class="me-1" src="assets/img/sunLight.svg" alt="" />
                           <span>9:00 AM - 12:00 PM</span>
                        </button> 
-                       <button class="not-available" disabled>
+                       <button class="available" >
                           <img class="me-1" src="assets/img/sunLight.svg" alt="" />
                           <span>12:30 AM - 3:30 PM</span>
                        </button> 
-                       <button class="not-available" disabled>
+                       <button class="available" >
                           <img class="me-1" src="assets/img/sunLight.svg" alt="" />
                           <span>6:00 AM - 9:00 PM</span>
                        </button> 
                        <button class="available">
                           <img class="me-1" src="assets/img/sunLight.svg" alt="" />
-                          <span id="slote_time">9:30 AM - 12:00 AM</span>
+                          <span >9:30 AM - 12:00 AM</span>
                        </button> 
                      </div>
                      
@@ -227,7 +228,7 @@
                      <div class="col-lg-7">
                         <div class="p-md-4 p-2">
                            <div class="d-flex flex-wrap align-items-center mb-2">
-                              <h2 class="fs-4 mb-0 d-md-block d-none slote_name1">Opera</h2>
+                              <h2 class="fs-4 mb-0 d-md-block d-none slot_name1">Opera</h2>
                               <span class="fs-14 fw-bold text-white rounded-pill ms-md-auto"><a href="javascript:void(0)" class="btn button-custom rounded-pill px-3 px-lg-4 px-xxl-5 proceed">Proceed</a><br>
                                  <p class="mt-2 mb-0" style="color:blue;">(Just pay <b id="advance_amount">₹590 advance</b> to book</p></span>
                            </div>
@@ -277,20 +278,20 @@
                      <h2 class="fs-4 mb-0 d-md-none d-block  mb-3">Opera</h2>
                      <div class="fw-500 mb-2">Choose a time slot for <b id="calendar-value1"></b></div>
                      <div class="time-slot-selection flex-wrap">
-                       <button class="not-available" disabled><img class="me-1" src="assets/img/sunLight.svg" alt="" />
+                       <button class="available" ><img class="me-1" src="assets/img/sunLight.svg" alt="" />
                           <span>9:00 AM - 12:00 PM</span>
                        </button> 
-                       <button class="not-available" disabled>
+                       <button class="available" >
                           <img class="me-1" src="assets/img/sunLight.svg" alt="" />
                           <span>12:30 AM - 3:30 PM</span>
                        </button> 
-                       <button class="not-available" disabled>
+                       <button class="available" >
                           <img class="me-1" src="assets/img/sunLight.svg" alt="" />
                           <span>6:00 AM - 9:00 PM</span>
                        </button> 
                        <button class="available">
                           <img class="me-1" src="assets/img/sunLight.svg" alt="" />
-                          <span id="slote_time1">10:30 AM - 12:00 AM</span>
+                          <span id="">10:30 AM - 12:00 AM</span>
                        </button> 
                      </div>
                      
@@ -464,13 +465,18 @@
 
 
     function getValue(){
-        localStorage.removeItem('name');
+        if ($('#slot_time').val() == '') {
+           alert('select time Slot');
+        }
+        else{
+            // console.log('no`');
+            localStorage.removeItem('name');
         localStorage.removeItem('calender');
         localStorage.removeItem('time');
         localStorage.removeItem('total');
         localStorage.removeItem('advance');
         // console.log('yes');
-        var name = $('.slote_name').text();
+        var name = $('.slot_name').text();
         // console.log(name);
         var calender = $('#calendar-value').text();
         var advance_amount = $('#advance_amount').text();
@@ -478,43 +484,85 @@
         var total = total_amount.match(/\d+/)[0];
         var advance = advance_amount.match(/\d+/)[0];
         // console.log(total+':'+advance);
-        var time = $('#slote_time').text();
+        var time = $('#slot_time').val();
         // console.log(time);
         localStorage.setItem('name',name);
         localStorage.setItem('calender',calender);
         localStorage.setItem('time',time);
         localStorage.setItem('total',total);
         localStorage.setItem('advance',advance);
+        localStorage.setItem('total_seat',4);
         window.location.href ='/overview';
+        }
+        // localStorage.removeItem('name');
+        // localStorage.removeItem('calender');
+        // localStorage.removeItem('time');
+        // localStorage.removeItem('total');
+        // localStorage.removeItem('advance');
+        // // console.log('yes');
+        // var name = $('.slot_name').text();
+        // // console.log(name);
+        // var calender = $('#calendar-value').text();
+        // var advance_amount = $('#advance_amount').text();
+        // var total_amount = $('.total_amount').text();
+        // var total = total_amount.match(/\d+/)[0];
+        // var advance = advance_amount.match(/\d+/)[0];
+        // // console.log(total+':'+advance);
+        // var time = $('#slot_time').text();
+        // // console.log(time);
+        // localStorage.setItem('name',name);
+        // localStorage.setItem('calender',calender);
+        // localStorage.setItem('time',time);
+        // localStorage.setItem('total',total);
+        // localStorage.setItem('advance',advance);
+        // window.location.href ='/overview';
     }
 
     $('.proceed').on('click', getValue);
 
 
     function getValue1(){
-        localStorage.removeItem('name');
+        if ($('#slot_time').val() == '') {
+           alert('select time Slot');
+        }
+        else{
+            localStorage.removeItem('name');
         localStorage.removeItem('calender');
         localStorage.removeItem('time');
         localStorage.removeItem('total');
         localStorage.removeItem('advance');
         // console.log('yes');
-        var name = $('.slote_name1').text();
+        var name = $('.slot_name1').text();
         // console.log(name);
         var calender = $('#calendar-value1').text();
+        var advance_amount = $('#advance_amount').text();
+        var total_amount = $('.total_amount').text();
+        var total = total_amount.match(/\d+/)[0];
+        var advance = advance_amount.match(/\d+/)[0];
         // console.log(calender);
-        var time = $('#slote_time1').text();
+        var time = $('#slot_time').val();
         // console.log(time);
         localStorage.setItem('name',name);
         localStorage.setItem('calender',calender);
         localStorage.setItem('time',time);
         localStorage.setItem('total',total);
         localStorage.setItem('advance',advance);
+        localStorage.setItem('total_seat',4);
         window.location.href ='/overview';
+        }
+        
     }
 
     $('.proceed1').on('click', getValue1);
 
     
+    $('.available').on('click',function(){
+        $('#slot_time').val('');
+        var slot_time = $(this).find('span').text(); 
+        // console.log($(this).find('span').text());
+        $('#slot_time').val(slot_time)
+    })
+
 </script>
 @endsection
 

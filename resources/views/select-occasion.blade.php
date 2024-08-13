@@ -96,6 +96,9 @@
                      <div class="d-flex mb-2">
                         <span>Occasion Decoration</span><b class="ms-auto decoration"></b>
                      </div>
+                     <div class="d-flex mb-2">
+                        <span>Extra Person</span><b class="ms-auto extra"></b>
+                     </div>
                      <hr>
                      <div class="d-flex mb-2">
                         <span>Subtotal</span><b class="ms-auto sub_total"></b>
@@ -128,7 +131,7 @@
                 $('.advance').text('₹ '+''+ localStorage.getItem('advance'));
                 $('.fs-11').text('(Payable at the Venue on '+' '+ localStorage.getItem('calender')+')');
                 $('.balance').text('₹ '+ left_advance);
-
+                $('.extra').text('₹ '+ localStorage.getItem('extra'));
             });
             
             function getDecoration(){

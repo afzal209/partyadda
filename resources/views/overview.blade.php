@@ -97,6 +97,9 @@
                      <div class="d-flex mb-2">
                         <span>Decoration</span><b class="ms-auto">₹ 0</b>
                      </div>
+                     <div class="d-flex mb-2">
+                        <span>Extra Person</span><b class="ms-auto extra"></b>
+                     </div>
                      <hr>
                      <div class="d-flex mb-2">
                         <span>Subtotal</span><b class="ms-auto sub_total"></b>
@@ -107,7 +110,7 @@
                      </div>
                      <hr>
                      <div class="d-flex mb-2 ">
-                        <span>Balance Amount<div class="fs-11">(Payable at the Venue on 7th Auguts, 2024)</div></span>
+                        <span>Balance Amount<div class="fs-11"></div></span>
                         <b class="ms-auto balance"></b>
                      </div>
 					 <div class="col-md-6">
@@ -126,10 +129,12 @@
                 $('.total').text('₹'+''+ localStorage.getItem('total'));
                 $('.sub_total').text('₹'+''+ localStorage.getItem('total'));
                 $('.advance').text('₹'+''+ localStorage.getItem('advance'));
+                $('.fs-11').text('(Payable at the Venue on '+' '+ localStorage.getItem('calender')+')');
                 $('.balance').text( localStorage.getItem('total') - localStorage.getItem('advance'));
 
             });
             function nextOccasion(){
+                localStorage.removeItem('extra');
                 // console.log('yes');
                 var Booking_Name = $('#Booking_Name').val();
                 var input_number = $('.input_number').val(); 
@@ -137,6 +142,7 @@
                 var Email_ID = $('#Email_ID').val();
                 var form_select_lg = $('#form_select_lg').val();
                 var coupon_code = $('.coupon_code').val();
+                var extra = $('.extra').text();
                 // console.log(Booking_Name+input_number+Whatsapp_Name+Email_ID+form_select_lg+coupon_code);
                 localStorage.setItem('Booking_Name',Booking_Name)
                 localStorage.setItem('input_number',input_number)
@@ -144,6 +150,7 @@
                 localStorage.setItem('Email_ID',Email_ID)
                 localStorage.setItem('form_select_lg',form_select_lg)
                 localStorage.setItem('coupon_code',coupon_code)
+                localStorage.setItem('extra',extra)
                 window.location.href ='/select-occasion'
 
             }

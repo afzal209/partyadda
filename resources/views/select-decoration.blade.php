@@ -15,65 +15,65 @@
                   <!--  -->
                   <form class="mb-5">
                      <div class="row gy-4">
-                        <div class="col-6 col-lg-3 main_div" id="main_div">
+                        <div class="col-6 col-lg-3 main_div" id="main_div" >
                            <label class="select-option text-center">
-                              <input type="checkbox" name="check">
+                              <input type="checkbox" name="check" value="Sash" onchange="getDecorationMulti($(this), '149' )">
                               <div class="frame"><img src="/assets/img/event_birthday.webp" class="img-fluid" /><i class=""></i></div>
                               <p class="fw-bold mb-0 text_value">Sash</p>
                               <div>₹ 149</div>
                            </label>
                         </div>
-                        <div class="col-6 col-lg-3 main_div" id="main_div">
+                        <div class="col-6 col-lg-3 main_div" id="main_div" >
                            <label class="select-option text-center">
-                              <input type="checkbox" name="check">
+                              <input type="checkbox" name="check" value="Party Props" onchange="getDecorationMulti($(this),'199')">
                               <div class="frame"><img src="/assets/img/event_anniversary.webp" class="img-fluid" /><i class=""></i></div>
                               <p class="fw-bold mb-0 text_value">Party Props</p>
                               <div>₹ 199</div>
                            </label>
                         </div>
-                        <div class="col-6 col-lg-3 main_div" id="main_div">
+                        <div class="col-6 col-lg-3 main_div" id="main_div" >
                            <label class="select-option text-center">
-                              <input type="checkbox" name="check">
+                              <input type="checkbox" name="check" value="LED Name" onchange="getDecorationMulti($(this),'199')">
                               <div class="frame"><img src="/assets/img/event_romantic_date.webp" class="img-fluid" /><i class=""></i></div>
                               <p class="fw-bold mb-0 text_value">LED Name</p>
                               <div>₹ 199</div>
                            </label>
                         </div>
-                        <div class="col-6 col-lg-3 main_div" id="main_div">
+                        <div class="col-6 col-lg-3 main_div" id="main_div" >
                            <label class="select-option text-center">
-                              <input type="checkbox" name="check">
+                              <input type="checkbox" name="check" value="Message Box" onchange="getDecorationMulti($(this),'99')">
                               <div class="frame"><img src="/assets/img/event_marriage_proposal.webp" class="img-fluid" /><i class=""></i></div>
                               <p class="fw-bold mb-0 text_value">Message Box</p>
                               <div>₹ 99</div>
                            </label>
                         </div>
-                        <div class="col-6 col-lg-3 main_div" id="main_div">
+                        <div class="col-6 col-lg-3 main_div" id="main_div" >
                            <label class="select-option text-center">
-                              <input type="checkbox" name="check">
+                              <input type="checkbox" name="check" value="Single Rose" onchange="getDecorationMulti($(this),'49')">
                               <div class="frame"><img src="/assets/img/event_congratulations.webp" class="img-fluid" /><i class=""></i></div>
                               <p class="fw-bold mb-0 text_value">Single Rose</p>
                               <div>₹ 49</div>
                            </label>
                         </div>
-                        <div class="col-6 col-lg-3 main_div" id="main_div">
+                        <div class="col-6 col-lg-3 main_div" id="main_div" >
                            <label class="select-option text-center">
-                              <input type="checkbox" name="check">
+                              <input type="checkbox" name="check" value="Rose Bouque" onchange="getDecorationMulti($(this),'349')">
                               <div class="frame"><img src="/assets/img/event_bride_to_be.webp" class="img-fluid" /><i class=""></i></div>
                               <p class="fw-bold mb-0 text_value">Rose Bouquet</p>
                               <div>₹ 349</div>
                            </label>
                         </div>
-                        <div class="col-6 col-lg-3 main_div" id="main_div">
+                        <div class="col-6 col-lg-3 main_div" id="main_div" >
                            <label class="select-option text-center">
-                              <input type="checkbox" name="check">
+                              <input type="checkbox" name="check" value="Photography" onchange="getDecorationMulti($(this),'249')">
                               <div class="frame"><img src="/assets/img/event_baby_shower.webp" class="img-fluid" /><i class=""></i></div>
                               <p class="fw-bold mb-1">Photography <font size="1.2px">15 Min</font></p>
                               <div>₹ 249</div>
                            </label>
                         </div>
-                        <div class="col-6 col-lg-3 main_div" id="main_div">
+                        <div class="col-6 col-lg-3 main_div" id="main_div" >
                            <label class="select-option text-center">
-                              <input type="checkbox" name="check">
+                              <input type="checkbox" name="check" value="Candle Entry" onchange="getDecorationMulti($(this),'199')">
                               <div class="frame"><img src="/assets/img/event_farewell.webp" class="img-fluid" /><i class=""></i></div>
                               <p class="fw-bold mb-0 text_value">Candle Entry</p>
                               <div>₹ 199</div>
@@ -96,10 +96,13 @@
                         <span>Birthday Occasion</span><b class="ms-auto decoration"></b>
                      </div>
                      <div class="d-flex mb-2">
-                        <span>Cake</span><b class="ms-auto cake"></b>
+                        <span>Extra Person</span><b class="ms-auto extra"></b>
                      </div>
                      <div class="d-flex mb-2">
-                        <span>Special Ad-On<br><small> -Party Props</small><br><small> -Message Box</small><br><small> -Photography</small></span><b class="ms-auto">₹ 547</b>
+                     <span class="multi_cake"></span><b class="ms-auto cake"></b>
+                     </div>
+                     <div class="d-flex mb-2">
+                        <span class="multi"></span><b class="ms-auto multi_decoration"></b>
                      </div>
                      <hr>
                      <div class="d-flex mb-2">
@@ -135,24 +138,74 @@
                 $('.fs-11').text('(Payable at the Venue on '+' '+ localStorage.getItem('calender')+')');
                 $('.balance').text('₹ '+''+ localStorage.getItem('after_cake_ad_on'));
                 $('.cake').text(localStorage.getItem('cake'))
+                $('.extra').text('₹ ' + '' + localStorage.getItem('extra'));
+                var storedContent = localStorage.getItem('multiCakeContent');
+                $('.multi_cake').html(storedContent)
+
             });
-            // function getDecorationMulti(){
-            //     var name = $(this).find('.text_value').text();
-            //     var arr = [];
-            //     arr.push(name);
-            //     console.log(arr);
-            // }
+            var arr = [];
+var totalAmount = 0; 
+          
+
+            function getDecorationMulti(val, amount) {
+                var sub_total_decoration = localStorage.getItem('after_cake_ad_on_sub_total').match(/\d+/)[0];
+   var decoration_balance =localStorage.getItem('after_cake_ad_on').match(/\d+/)[0];
+   // console.log(sub_total_decoration);
+   var name = $(val).val();
+    
+    if ($(val).is(':checked')) {
+        // If the checkbox is checked, add the value to the array and update the total amount
+        arr.push(name);
+        totalAmount += parseFloat(amount); // Add the amount to the total
+        var decoration_total_result = parseInt(sub_total_decoration) + parseInt(totalAmount);
+    var balance_result = parseInt(decoration_balance) + parseInt(totalAmount);
+    } else {
+        // If the checkbox is unchecked, remove the value from the array and update the total amount
+        var index = arr.indexOf(name);
+        if (index !== -1) {
+            arr.splice(index, 1);
+            totalAmount -= parseFloat(amount); // Subtract the amount from the total
+            var decoration_total_result = parseInt(sub_total_decoration) - parseInt(totalAmount);
+    var balance_result = parseInt(decoration_balance) - parseInt(totalAmount);
+        }
+    }
+
+    console.log(arr);
+
+    // Build the HTML dynamically based on the number of items in the array
+    var htmlContent = 'Special Ad-On<br>';
+    for (var i = 0; i < arr.length; i++) {
+        htmlContent += '<small>' + arr[i] + '</small><br>';
+    }
+
+    
+
+   //  htmlContent += '<br>Total Amount: $' + totalAmount.toFixed(2); // Display the total amount
+    $('.multi_decoration').text('₹ ' + '' + totalAmount);
+    $('.sub_total').text('₹ ' + '' + decoration_total_result);
+    $('.balance').text('₹ ' + '' + balance_result);
+    
+    $('.multi').html(htmlContent);
+
+    localStorage.setItem('multiDecorationContent', htmlContent);
+            }
+
+//     function updateSelectedValuesDisplay() {
+//         $('#selected-values').val(selectedValues.join(', '));
+//     }
+
+
 
             // $('.main_div').on('click',getDecorationMulti);
-            var selectedValues = []; 
-            $(".main_div").click(function() {
-        // Get the text inside the .text_value element within the clicked .main_div
-        var textValue = $(this).find(".text_value").text();
-
-        // Push the textValue into the array
-        selectedValues.push(textValue);
-
-        console.log(selectedValues); // Log the array to the console to see the values
-    });
+    //         var selectedValues = []; 
+    //         $(".main_div").click(function() {
+    //     // Get the text inside the .text_value element within the clicked .main_div
+    //     var textValue = $(this).find('.text-center').find(".text_value").text();
+    //             // console.log(textValue);
+    //     // Push the textValue into the array
+    //      selectedValues.push(textValue);
+    //     console.log(selectedValues);        
+    //     // console.log(array_unique(textbox_value)); // Log the array to the console to see the values
+    // });
             </script>
 @endsection

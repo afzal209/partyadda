@@ -122,6 +122,7 @@
          // Create a new calendar
          jSuites.calendar(document.getElementById('calendar'), {
              format: 'YYYY-MM-DD',
+             validRange: [new Date().toISOString().split('T')[0], null], // Disable previous dates
              onupdate: function(a,b) {
                 const date = new Date(b);
 
@@ -137,7 +138,7 @@ const year = date.getFullYear();
 const suffix = 'th';
 
 // Combine into the final format
-const formattedDate = `${day}${suffix} ${month} ${year}`;
+const formattedDate = `${day}`+'-'+`${month}` +'-'+ `${year}`;
 
 // console.log(formattedDate);
                 // console.log(b);
@@ -265,13 +266,35 @@ const formattedDate = `${day}${suffix} ${month} ${year}`;
          button.addEventListener('click', function(e) {
             // alert('yes');
            e.preventDefault();
-         
+        //  var extra = 300;
            const fieldName = this.getAttribute('data-field');
            const type = this.getAttribute('data-type');
            const input = document.querySelector(`input[name='${fieldName}']`);
+        //    console.log(type);
            let currentVal = parseInt(input.value);
-         
-           if (!isNaN(currentVal)) {
+            // console.log(currentVal);
+            if (currentVal >= localStorage.getItem('total_seat')) {
+                let extraVal = parseInt($('.extra').text()) || 0;  // Get the current value of .extra or 0 if it's not a number
+                extraVal += 300;  // Add 300 to the current extr
+                if(currentVal >= 15){
+                    alert('limit cross');
+                }
+                else{
+                    var sub_tt = $('.sub_total').text().match(/\d+/)[0];
+                var result_st = parseFloat(sub_tt) + parseFloat(extraVal);
+                $('.balance').text(parseInt(localStorage.getItem('total')) + parseInt(extraVal))
+                $('.sub_total').text(result_st);
+                $('.extra').text(extraVal);
+                }
+                
+                
+            }
+            if(currentVal >= 15){
+                alert('limit cross');
+            }
+            else{
+            // if(currentVal <= 15){
+                if (!isNaN(currentVal)) {
                if (type === 'minus') {
                    if (currentVal > parseInt(input.getAttribute('min'))) {
                        input.value = currentVal - 1;
@@ -284,6 +307,7 @@ const formattedDate = `${day}${suffix} ${month} ${year}`;
                    if (currentVal < parseInt(input.getAttribute('max'))) {
                        input.value = currentVal + 1;
                        input.dispatchEvent(new Event('change'));
+                       
                    }
                    if (parseInt(input.value) === parseInt(input.getAttribute('max'))) {
                        this.setAttribute('disabled', true);
@@ -291,16 +315,20 @@ const formattedDate = `${day}${suffix} ${month} ${year}`;
                }
            } else {
                input.value = 0;
-           }
+           } 
+        // }
+            }
+           
          });
          });
          
-         document.querySelectorAll('.input-number').forEach(function(input) {
+         document.querySelectorAll('.input_number').forEach(function(input) {
          input.addEventListener('focusin', function() {
            this.setAttribute('data-oldValue', this.value);
          });
          
          input.addEventListener('change', function() {
+            // console.log('yes');
            const minValue = parseInt(this.getAttribute('min'));
            const maxValue = parseInt(this.getAttribute('max'));
            const valueCurrent = parseInt(this.value);
@@ -340,15 +368,15 @@ const formattedDate = `${day}${suffix} ${month} ${year}`;
          });
 
          // When the user scrolls down 20px from the top of the document, show the button
-         window.onscroll = function() {scrollFunction()};
+        //  window.onscroll = function() {scrollFunction()};
          
-         function scrollFunction() {
-         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-           mybutton.style.display = "block";
-         } else {
-           mybutton.style.display = "none";
-         }
-         }
+        //  function scrollFunction() {
+        //  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        //    mybutton.style.display = "block";
+        //  } else {
+        //    mybutton.style.display = "none";
+        //  }
+        //  }
          
          // When the user clicks on the button, scroll to the top of the document
          function topFunction() {
