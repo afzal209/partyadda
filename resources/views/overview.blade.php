@@ -53,7 +53,7 @@
                                     </svg>
                                  </button>
                               </span>
-                              <input type="text" name="quant[1]" class="form-control input_number" value="0" min="0" max="30">
+                              <input type="text" name="quant[1]" class="form-control input_number" value="0" min="0" max="30" readonly>
                               <span class="input-group-btn">
                                  <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
                                     <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-1k33q06" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="AddIcon">
@@ -126,9 +126,9 @@
                 $('.name').text(localStorage.getItem('name'));
                 $('.calender').text(localStorage.getItem('calender'));
                 $('.time').text(localStorage.getItem('time'));
-                $('.total').text('₹'+''+ localStorage.getItem('total'));
-                $('.sub_total').text('₹'+''+ localStorage.getItem('total'));
-                $('.advance').text('₹'+''+ localStorage.getItem('advance'));
+                $('.total').text('₹'+' '+ localStorage.getItem('total'));
+                $('.sub_total').text('₹'+' '+ localStorage.getItem('total'));
+                $('.advance').text('₹'+' '+ localStorage.getItem('advance'));
                 $('.fs-11').text('(Payable at the Venue on '+' '+ localStorage.getItem('calender')+')');
                 $('.balance').text( localStorage.getItem('total') - localStorage.getItem('advance'));
 

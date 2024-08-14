@@ -196,9 +196,9 @@
                   <div class="row g-0 ">
 					 <div class="col-lg-5">
 						<div class="package-images">
-						   <div><img src="assets/img/opera1.jpg" style="height:220px;" class="img-fluid" alt="Opera Private Theatre"></div>
-						   <div><img src="assets/img/opera2.jpg" style="height:220px;" class="img-fluid" alt="Opera Private Theatre"></div>
-						   <div><img src="assets/img/opera1.jpg" style="height:220px;" class="img-fluid" alt="Opera Private Theatre"></div>
+						   <div><img src="{{URL::asset('assets/img/opera1.jpg')}}" style="height:220px;" class="img-fluid" alt="Opera Private Theatre"></div>
+						   <div><img src="{{URL::asset('assets/img/opera2.jpg')}}" style="height:220px;" class="img-fluid" alt="Opera Private Theatre"></div>
+						   <div><img src="{{URL::asset('assets/img/opera1.jpg')}}" style="height:220px;" class="img-fluid" alt="Opera Private Theatre"></div>
 						</div>
                   <div class="px-2 px-md-3">
                     <input type="hidden" name="slot_time" value="" id="slot_time">
@@ -206,19 +206,19 @@
                      <h2 class="fs-4 mb-0 d-md-none d-block  mb-3 slot_name">Opera</h2>
                      <div class="fw-500 mb-2">Choose a time slot for <b id="calendar-value"></b></div>
                      <div class="time-slot-selection flex-wrap">
-                       <button class="available" ><img class="me-1" src="assets/img/sunLight.svg" alt="" />
+                       <button class="available" ><img class="me-1" src="{{URL::asset('assets/img/sunLight.svg')}}" alt="" />
                           <span>9:00 AM - 12:00 PM</span>
                        </button> 
                        <button class="available" >
-                          <img class="me-1" src="assets/img/sunLight.svg" alt="" />
+                          <img class="me-1" src="{{URL::asset('assets/img/sunLight.svg')}}" alt="" />
                           <span>12:30 AM - 3:30 PM</span>
                        </button> 
                        <button class="available" >
-                          <img class="me-1" src="assets/img/sunLight.svg" alt="" />
+                          <img class="me-1" src="{{URL::asset('assets/img/sunLight.svg')}}" alt="" />
                           <span>6:00 AM - 9:00 PM</span>
                        </button> 
                        <button class="available">
-                          <img class="me-1" src="assets/img/sunLight.svg" alt="" />
+                          <img class="me-1" src="{{URL::asset('assets/img/sunLight.svg')}}" alt="" />
                           <span >9:30 AM - 12:00 AM</span>
                        </button> 
                      </div>
@@ -243,23 +243,23 @@
                               </button>
                            </div>
                            <div class="d-flex fs-14 mb-2">
-                              <img  class="me-2" src="assets/img/users.svg" alt="" />
+                              <img  class="me-2" src="{{URL::asset('assets/img/users.svg')}}" alt="" />
                               Ideal for Friends and Family
                            </div>
                            <div class="d-flex fs-14 mb-2">
-                              <span class="d-flex"><img class="me-2" src="assets/img/screen.svg" alt="" />150" Enhanced 4K Video</span>
+                              <span class="d-flex"><img class="me-2" src="{{URL::asset('assets/img/screen.svg')}}" alt="" />150" Enhanced 4K Video</span>
                            </div>
                            <div class="d-flex fs-14 mb-2">
-                              <span class="d-flex"><img  class="me-2" src="assets/img/soundVolume.svg" alt="" />Powerful Dolby atmos sound system with 600W</span>
+                              <span class="d-flex"><img  class="me-2" src="{{URL::asset('assets/img/soundVolume.svg')}}" alt="" />Powerful Dolby atmos sound system with 600W</span>
                            </div>
                            <div class="d-flex fs-14 mb-2">
-                              <img  class="me-2" src="assets/img/cakes.svg" alt="" />Add cakes and gifts in next step
+                              <img  class="me-2" src="{{URL::asset('assets/img/cakes.svg')}}" alt="" />Add cakes and gifts in next step
                            </div>
                            <div class="d-flex fs-14 mb-2">
-                              <img  class="me-2" src="assets/img/food.svg" alt="" />Food can be ordered at theater
+                              <img  class="me-2" src="{{URL::asset('assets/img/food.svg')}}" alt="" />Food can be ordered at theater
                            </div>
                            <div class="d-flex fs-14 mb-md-2 mb-3">
-                              <img  class="me-2" src="assets/img/cancellation.svg" alt="" />Free cancellation upto before 72 hrs of slot
+                              <img  class="me-2" src="{{URL::asset('assets/img/cancellation.svg')}}" alt="" />Free cancellation upto before 72 hrs of slot
                            </div>
                         </div>
                      </div>
@@ -269,28 +269,28 @@
                   <div class="row g-0 ">
 					 <div class="col-lg-5">
 						<div class="package-images">
-						   <div><img src="assets/img/opera1.jpg" style="height:220px;" class="img-fluid" alt="Opera Private Theatre"></div>
-						   <div><img src="assets/img/opera2.jpg" style="height:220px;" class="img-fluid" alt="Opera Private Theatre"></div>
-						   <div><img src="assets/img/opera1.jpg" style="height:220px;" class="img-fluid" alt="Opera Private Theatre"></div>
+						   <div><img src="{{URL::asset('assets/img/opera1.jpg')}}" style="height:220px;" class="img-fluid" alt="Opera Private Theatre"></div>
+						   <div><img src="{{URL::asset('assets/img/opera2.jpg')}}" style="height:220px;" class="img-fluid" alt="Opera Private Theatre"></div>
+						   <div><img src="{{URL::asset('assets/img/opera1.jpg')}}" style="height:220px;" class="img-fluid" alt="Opera Private Theatre"></div>
 						</div>
                   <div class="px-2 px-md-3">
                      <center><span class="seat-available fs-14 fw-bold text-white rounded-pill py-2 px-3 ms-auto">0  slots available</span></center><br>
                      <h2 class="fs-4 mb-0 d-md-none d-block  mb-3">Opera</h2>
                      <div class="fw-500 mb-2">Choose a time slot for <b id="calendar-value1"></b></div>
                      <div class="time-slot-selection flex-wrap">
-                       <button class="available" ><img class="me-1" src="assets/img/sunLight.svg" alt="" />
+                       <button class="available" ><img class="me-1" src="{{URL::asset('assets/img/sunLight.svg')}}" alt="" />
                           <span>9:00 AM - 12:00 PM</span>
                        </button> 
                        <button class="available" >
-                          <img class="me-1" src="assets/img/sunLight.svg" alt="" />
+                          <img class="me-1" src="{{URL::asset('assets/img/sunLight.svg')}}" alt="" />
                           <span>12:30 AM - 3:30 PM</span>
                        </button> 
                        <button class="available" >
-                          <img class="me-1" src="assets/img/sunLight.svg" alt="" />
+                          <img class="me-1" src="{{URL::asset('assets/img/sunLight.svg')}}" alt="" />
                           <span>6:00 AM - 9:00 PM</span>
                        </button> 
                        <button class="available">
-                          <img class="me-1" src="assets/img/sunLight.svg" alt="" />
+                          <img class="me-1" src="{{URL::asset('assets/img/sunLight.svg')}}" alt="" />
                           <span id="">10:30 AM - 12:00 AM</span>
                        </button> 
                      </div>
@@ -315,23 +315,23 @@
                               </button>
                            </div>
                            <div class="d-flex fs-14 mb-2">
-                              <img  class="me-2" src="assets/img/users.svg" alt="" />
+                              <img  class="me-2" src="{{URL::asset('assets/img/users.svg')}}" alt="" />
                               Ideal for Friends and Family
                            </div>
                            <div class="d-flex fs-14 mb-2">
-                              <span class="d-flex"><img class="me-2" src="assets/img/screen.svg" alt="" />150" Enhanced 4K Video</span>
+                              <span class="d-flex"><img class="me-2" src="{{URL::asset('assets/img/screen.svg')}}" alt="" />150" Enhanced 4K Video</span>
                            </div>
                            <div class="d-flex fs-14 mb-2">
-                              <span class="d-flex"><img  class="me-2" src="assets/img/soundVolume.svg" alt="" />Powerful Dolby atmos sound system with 600W</span>
+                              <span class="d-flex"><img  class="me-2" src="{{URL::asset('assets/img/soundVolume.svg')}}" alt="" />Powerful Dolby atmos sound system with 600W</span>
                            </div>
                            <div class="d-flex fs-14 mb-2">
-                              <img  class="me-2" src="assets/img/cakes.svg" alt="" />Add cakes and gifts in next step
+                              <img  class="me-2" src="{{URL::asset('assets/img/cakes.svg')}}" alt="" />Add cakes and gifts in next step
                            </div>
                            <div class="d-flex fs-14 mb-2">
-                              <img  class="me-2" src="assets/img/food.svg" alt="" />Food can be ordered at theater
+                              <img  class="me-2" src="{{URL::asset('assets/img/food.svg')}}" alt="" />Food can be ordered at theater
                            </div>
                            <div class="d-flex fs-14 mb-md-2 mb-3">
-                              <img  class="me-2" src="assets/img/cancellation.svg" alt="" />Free cancellation upto before 72 hrs of slot
+                              <img  class="me-2" src="{{URL::asset('assets/img/cancellation.svg')}}" alt="" />Free cancellation upto before 72 hrs of slot
                            </div>
                         </div>
                      </div>
@@ -412,7 +412,7 @@
                   <div>
                      <div class="row gy-4 flex-column">
                         <div class="col">
-                           <img src="assets/img/whychooseus_1.jpg" class="d-block w-100 rounded20" alt="...">
+                           <img src="{{URL::asset('assets/img/whychooseus_1.jpg')}}" class="d-block w-100 rounded20" alt="...">
                         </div>
                         <div class="col">
                            <div class="fs-3 mb-4">
@@ -427,7 +427,7 @@
                   <div>
                      <div class="row gy-4 flex-column">
                         <div class="col">
-                           <img src="assets/img/whychooseus_3.jpg" class="d-block w-100 rounded20" alt="...">
+                           <img src="{{URL::asset('assets/img/whychooseus_3.jpg')}}" class="d-block w-100 rounded20" alt="...">
                         </div>
                         <div class="col">
                            <div class="fs-3 mb-4">
@@ -442,7 +442,7 @@
                   <div>
                      <div class="row gy-4 flex-column">
                         <div class="col">
-                           <img src="assets/img/whychooseus_4.jpg" class="d-block w-100 rounded20" alt="...">
+                           <img src="{{URL::asset('assets/img/whychooseus_4.jpg')}}" class="d-block w-100 rounded20" alt="...">
                         </div>
                         <div class="col">
                            <div class="fs-3 mb-4">

@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg" aria-label="Fifth navbar example">
          <div class="container">
             <a class="navbar-brand" href="/">
-            <img src="resources/img/logo.png" alt="Party Adda" width="74" height="62">
+            <img src="{{URL::asset('assets/img/logo.png')}}" alt="Party Adda" width="74" height="62">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+use App\Http\Controllers\bookingController;
+
 Route::get('/', function () {
     return view('home');
 });
@@ -33,5 +35,18 @@ Route::get('/select-cake', function () {
 Route::get('/select-decoration', function () {
     return view('select-decoration');
 });
+
+Route::get('/aggrement',function(){
+    return view('aggrement');
+});
+
+// Route::post('/booking' , 'booking@index')->name('booking.index');
+
+Route::post('aggrement/booking', [bookingController::class, 'index'])->name('booking_add');
+
+Route::get('/thank_you',function(){
+    return view('thank_you');
+});
+
 
 

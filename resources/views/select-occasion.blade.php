@@ -19,7 +19,7 @@
                         <div class="col-6 col-lg-3">
                            <label class="select-option text-center">
                               <input type="radio" name="check" value="600" class="main_div">
-                              <div class="frame"><img src="assets/img/event_birthday.webp" class="img-fluid" /><i class=""></i></div>
+                              <div class="frame"><img src="{{URL::asset('assets/img/event_birthday.webp')}}" class="img-fluid" /><i class=""></i></div>
                               <p class="fw-bold mb-0">Birthday</p>
                               <div class="price">₹ 600</div>
                            </label>
@@ -27,7 +27,7 @@
                         <div class="col-6 col-lg-3">
                            <label class="select-option text-center">
                               <input type="radio" name="check" value="600" class="main_div">
-                              <div class="frame"><img src="assets/img/event_anniversary.webp" class="img-fluid" /><i class=""></i></div>
+                              <div class="frame"><img src="{{URL::asset('assets/img/event_anniversary.webp')}}" class="img-fluid" /><i class=""></i></div>
                               <p class="fw-bold mb-0">Anniversary</p>
                               <div>₹ 600</div>
                            </label>
@@ -35,7 +35,7 @@
                         <div class="col-6 col-lg-3">
                            <label class="select-option text-center">
                               <input type="radio" name="check" value="600" class="main_div">
-                              <div class="frame"><img src="assets/img/event_romantic_date.webp" class="img-fluid" /><i class=""></i></div>
+                              <div class="frame"><img src="{{URL::asset('assets/img/event_romantic_date.webp')}}" class="img-fluid" /><i class=""></i></div>
                               <p class="fw-bold mb-0">Romantic Date</p>
                               <div>₹ 600</div>
                            </label>
@@ -43,7 +43,7 @@
                         <div class="col-6 col-lg-3">
                            <label class="select-option text-center">
                               <input type="radio" name="check" value="600" class="main_div">
-                              <div class="frame"><img src="assets/img/event_marriage_proposal.webp" class="img-fluid" /><i class=""></i></div>
+                              <div class="frame"><img src="{{URL::asset('assets/img/event_marriage_proposal.webp')}}" class="img-fluid" /><i class=""></i></div>
                               <p class="fw-bold mb-0">Proposal</p>
                               <div>₹ 600</div>
                            </label>
@@ -51,7 +51,7 @@
                         <div class="col-6 col-lg-3">
                            <label class="select-option text-center">
                               <input type="radio" name="check" value="600" class="main_div">
-                              <div class="frame"><img src="assets/img/event_congratulations.webp" class="img-fluid" /><i class=""></i></div>
+                              <div class="frame"><img src="{{URL::asset('assets/img/event_congratulations.webp')}}" class="img-fluid" /><i class=""></i></div>
                               <p class="fw-bold mb-0">Congratulations</p>
                               <div>₹ 600</div>
                            </label>
@@ -59,7 +59,7 @@
                         <div class="col-6 col-lg-3">
                            <label class="select-option text-center">
                               <input type="radio" name="check" value="600" class="main_div">
-                              <div class="frame"><img src="assets/img/event_bride_to_be.webp" class="img-fluid" /><i class=""></i></div>
+                              <div class="frame"><img src="{{URL::asset('assets/img/event_bride_to_be.webp')}}" class="img-fluid" /><i class=""></i></div>
                               <p class="fw-bold mb-0">Bride to be</p>
                               <div>₹ 600</div>
                            </label>
@@ -67,7 +67,7 @@
                         <div class="col-6 col-lg-3">
                            <label class="select-option text-center">
                               <input type="radio" name="check" value="600" class="main_div">
-                              <div class="frame"><img src="assets/img/event_baby_shower.webp" class="img-fluid" /><i class=""></i></div>
+                              <div class="frame"><img src="{{URL::asset('assets/img/event_baby_shower.webp')}}" class="img-fluid" /><i class=""></i></div>
                               <p class="fw-bold mb-0">Baby Shower</p>
                               <div>₹ 600</div>
                            </label>
@@ -75,7 +75,7 @@
                         <div class="col-6 col-lg-3">
                            <label class="select-option text-center">
                               <input type="radio" name="check" value="600" class="main_div">
-                              <div class="frame"><img src="assets/img/event_farewell.webp" class="img-fluid" /><i class=""></i></div>
+                              <div class="frame"><img src="{{URL::asset('assets/img/event_farewell.webp')}}" class="img-fluid" /><i class=""></i></div>
                               <p class="fw-bold mb-0">Farewell</p>
                               <div>₹ 600</div>
                            </label>

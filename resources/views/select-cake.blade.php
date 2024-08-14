@@ -22,7 +22,7 @@
                         <label class="select-option text-center">
                             <input type="checkbox" name="check" value="Vanilla" 
                                 onclick="getAdon($(this),'500')">
-                            <div class="frame"><img src="/assets/img/Black_forest.png" class="img-fluid" /><i
+                            <div class="frame"><img src="{{URL::asset('assets/img/Black_forest.png') }}" class="img-fluid" /><i
                                     class=""></i></div>
                             <p class="fw-bold mb-0"> Vanilla</p>
                             <div>₹ 500</div>
@@ -32,7 +32,7 @@
                         <label class="select-option text-center">
                             <input type="checkbox" name="check" value="Strawberry" 
                                 onclick="getAdon($(this),'500')">
-                            <div class="frame"><img src="/assets/img/Black_forest.png" class="img-fluid" /><i
+                            <div class="frame"><img src="{{URL::asset('assets/img/Black_forest.png') }}" class="img-fluid" /><i
                                     class=""></i></div>
                             <p class="fw-bold mb-0"> Strawberry</p>
                             <div>₹ 500</div>
@@ -42,7 +42,7 @@
                         <label class="select-option text-center">
                             <input type="checkbox" name="check" value="Butterscotch" 
                                 onclick="getAdon($(this),'500')">
-                            <div class="frame"><img src="/assets/img/Black_forest.png" class="img-fluid" /><i
+                            <div class="frame"><img src="{{URL::asset('assets/img/Black_forest.png') }}" class="img-fluid" /><i
                                     class=""></i></div>
                             <p class="fw-bold mb-0"> Butterscotch</p>
                             <div>₹ 500</div>
@@ -52,7 +52,7 @@
                         <label class="select-option text-center">
                             <input type="checkbox" name="check" value="Chocolate" 
                                 onclick="getAdon($(this),'500')">
-                            <div class="frame"><img src="/assets/img/Black_forest.png" class="img-fluid" /><i
+                            <div class="frame"><img src="{{URL::asset('assets/img/Black_forest.png') }}" class="img-fluid" /><i
                                     class=""></i></div>
                             <p class="fw-bold mb-0"> Chocolate</p>
                             <div>₹ 500</div>
@@ -62,7 +62,7 @@
                         <label class="select-option text-center">
                             <input type="checkbox" name="check" value="Black Forest" 
                                 onclick="getAdon($(this),'500')">
-                            <div class="frame"><img src="/assets/img/Black_forest.png" class="img-fluid" /><i
+                            <div class="frame"><img src="{{URL::asset('assets/img/Black_forest.png') }}" class="img-fluid" /><i
                                     class=""></i></div>
                             <p class="fw-bold mb-0"> Black Forest</p>
                             <div>₹ 500</div>
@@ -72,7 +72,7 @@
                         <label class="select-option text-center">
                             <input type="checkbox" name="check" value="Dry Fruit" 
                                 onclick="getAdon($(this),'500')">
-                            <div class="frame"><img src="/assets/img/Black_forest.png" class="img-fluid" /><i
+                            <div class="frame"><img src="{{URL::asset('assets/img/Black_forest.png') }}" class="img-fluid" /><i
                                     class=""></i></div>
                             <p class="fw-bold mb-0"> Dry Fruit</p>
                             <div>₹ 500</div>
@@ -82,9 +82,9 @@
                         <label class="select-option text-center">
                             <input type="checkbox" name="check" value="Chocolate Coffee" 
                                 onclick="getAdon($(this),'500')">
-                            <div class="frame"><img src="/assets/img/Black_forest.png" class="img-fluid" /><i
+                            <div class="frame"><img src="{{URL::asset('assets/img/Black_forest.png') }}" class="img-fluid" /><i
                                     class=""></i></div>
-                            <p class="fw-bold mb-0"> Chocolate Coffee<img src="/assets/img/veg.jpg"
+                            <p class="fw-bold mb-0"> Chocolate Coffee<img src="{{URL::asset('assets/img/veg.jpg') }}"
                                     style="width:25px;height:25px;" /></p>
                             <div>₹ 500</div>
                         </label>
@@ -93,9 +93,9 @@
                         <label class="select-option text-center">
                             <input type="checkbox" name="check" value="Chocolate Truffle" 
                                 onclick="getAdon($(this),'500')">
-                            <div class="frame"><img src="/assets/img/Black_forest.png" class="img-fluid" /><i
+                            <div class="frame"><img src="{{URL::asset('assets/img/Black_forest.png') }}" class="img-fluid" /><i
                                     class=""></i></div>
-                            <p class="fw-bold mb-0"> Chocolate Truffle<img src="/assets/img/nonveg.png"
+                            <p class="fw-bold mb-0"> Chocolate Truffle<img src="{{URL::asset('assets/img/nonveg.png')}}"
                                     style="width:25px;height:25px;" /></p>
                             <div>₹ 500</div>
                         </label>
